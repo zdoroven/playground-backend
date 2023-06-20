@@ -20,8 +20,8 @@ fun main() {
 
     embeddedServer(
         Netty,
-        port = 80,
-        //System.getenv("SERVER_PORT").toInt(),
+//        port = 80,
+        System.getenv("SERVER_PORT").toInt(),
         module = Application::playzoneModule
     ).start(wait = true)
 }
