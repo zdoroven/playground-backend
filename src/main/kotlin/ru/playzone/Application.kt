@@ -11,16 +11,17 @@ import ru.playzone.plugins.configureRouting
 import ru.playzone.plugins.configureSerialization
 
 fun main() {
-    Database.connect(
-        url = System.getenv("DATABASE_CONNECTION_STRING"),
-        driver = "org.postgresql.Driver",
-        user = System.getenv("POSTGRES_USER"),
-        password = System.getenv("POSTGRES_PASSWORD")
-    )
+//    Database.connect(
+//        url = System.getenv("DATABASE_CONNECTION_STRING"),
+//        driver = "org.postgresql.Driver",
+//        user = System.getenv("POSTGRES_USER"),
+//        password = System.getenv("POSTGRES_PASSWORD")
+//    )
 
     embeddedServer(
         Netty,
-        port = System.getenv("SERVER_PORT").toInt(),
+        port = 80,
+        //System.getenv("SERVER_PORT").toInt(),
         module = Application::playzoneModule
     ).start(wait = true)
 }
